@@ -1,7 +1,5 @@
 import { html, TemplateResult } from 'lit-html';
 import { signature } from '../libs/templates';
-import { companies } from '../libs/companies';
-// import '@amber-ds/components/code';
 
 const update = (e :UpdateEvent) :void => {
   const event = new CustomEvent('update-data', {
@@ -16,43 +14,32 @@ const update = (e :UpdateEvent) :void => {
 export const form = (data :State) :TemplateResult => html`
 <div class="row">
   <form class="col-12 col-md-6">
-    <h4>Fill out with your data</h4>
-    <div class="">
+    <h4>Your signature details</h4>
+    <div class="field-row">
       <label for="firstname">First name</label>
-      <input class="twelve columns" type="text" name="firstname" 
+      <input type="text" name="firstname" 
         @keyup=${e => update(e)}>
     </div>
-    <div class="">
+    <div class="field-row">
       <label for="lastname">Last name</label>
-      <input class="twelve columns" type="text" name="lastname" 
+      <input type="text" name="lastname" 
         @keyup=${e => update(e)}>
     </div>
-    <div class="">
+    <div class="field-row">
       <label for="role">Role</label>
-      <input class="twelve columns" type="text" name="role"
+      <input type="text" name="role"
         @keyup=${e => update(e)}>
     </div>
-    <div class="">
+    <div class="field-row">
       <label for="email">Email</label>
       <input type="email" name="email" @keyup=${e => update(e)}>
-      <span class="error">Please provide a valid email address</span>
     </div>
-    <div class="">
+    <div class="field-row">
       <label for="phone">Phone number</label>
-      <input class="twelve columns" type="text" name="phone"
+      <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         @keyup=${e => update(e)}>
     </div>
-    <div class="">
-      <label for="company">Company</label>
-      <div class="options">
-        ${ companies.map(c => html`
-          <span><input type="radio" value=${c.label} name="company"
-            ?checked=${c.label === data.company}
-            @change=${e => update(e)}
-          > ${c.label}</span>
-        `) }
-      </div>
-    </div>
+
   </form>
   <div id="preview" class="col-12 col-md-6">
     <h4>Preview (for copy & paste)</h4>
@@ -60,11 +47,9 @@ export const form = (data :State) :TemplateResult => html`
   </div>
 </div>
   <div id="code">
-    <h4>HTML Code (for copy & paste)</h4>
+    <h4>If you email app prefers HTML (for copy & paste)</h4>
     <pre>
       <code></code>
     </pre>
-
-    <!-- <amber-code-snippet clipboard></amber-code-snippet> -->
   </code>
 `;

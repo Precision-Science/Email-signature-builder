@@ -22,7 +22,6 @@ module.exports = {
   devtool: 'source-map',
 
   plugins: [
-    new FaviconsWebpackPlugin('./src/assets/logo.png'),
 
     new HtmlWebpackPlugin({
       title: pkg.name,
@@ -32,28 +31,10 @@ module.exports = {
       template: './src/assets/index.html'
     }),
 
-    new WebpackPwaManifest({
-      name: pkg.name,
-      short_name: pkg.displayName,
-      description: pkg.description,
-      background_color: '#ffffff',
-      theme_color: pkg.themeColor,
-      start_url: '',
-      icons: [
-        {
-          src: path.resolve('src/assets/logo.png'),
-          sizes: [96, 128, 192, 256, 384, 512] // multiple sizes
-        }
-      ]
-    }),
-
     new workboxPlugin.GenerateSW({
       swDest: 'sw.js',
       clientsClaim: true,
       skipWaiting: true,
-      globPatterns: [
-        "**/*.{jpg,js,png,ico,json,html,css}"
-      ],
     })
   ],
 

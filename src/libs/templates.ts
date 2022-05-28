@@ -1,84 +1,45 @@
 import { html, TemplateResult } from 'lit-html';
-import { companies } from './companies';
-
-const confidentialITA = () :TemplateResult => 
-  html`<div style="line-height: 14px;"><br></div>
-    <p style="font-size: 11px; line-height: 15px; color: #999999; margin-bottom: 0;"><b style="font-weight: bold;">AVVISO
-        DI RISERVATEZZA:</b> Le informazioni contenute in questo messaggio sono strettamente riservate ed esclusivamente
-      indirizzate al destinatario indicato (oppure alla persona responsabile di rimetterlo al destinatario). Resta inteso
-      che
-      qualsiasi uso, riproduzione o divulgazione di questo messaggio a fini diversi da quelli oggetto della presente email
-      è
-      vietato. Nel caso in cui aveste ricevuto questa mail per errore, vogliate avvertire il mittente al più presto e
-      subito
-      dopo distruggerla.</p>`;
-
-const confidential = () :TemplateResult =>
-  html`
-  <div style="font-size: 11px; line-height: 14px;">
-    <p style="font-size: 11px; line-height: 14px; color: #999999; margin-bottom: 0;"><b style="font-weight: bold;">CONFIDENTIALITY:</b> This message contains confidential information intended only for the use of the addressee. It’s
-intended that any unauthorized use, dissemination or disclosure of this message for purpose that does not comply with
-its purpose is prohibited. If you received this message in error, or are not the intended recipient, please delete it
-and any copies from your systems and immediately notify. Thank you.</p>
-  </div>`;
 
 const phone = (num :string) :TemplateResult => 
-  html`<div style="line-height: 14px;"><a href="tel:${num}" target="_blank" style="font-size: 11px; line-height: 15px; color: #1155cc;">${num}</a></div>`;
+  html`<div style="line-height: 14px;"><a href="tel:${num}" target="_blank" style="font-size: 14px; line-height: 21px; color: #63666a; text-decoration:none;">${num}</a></div>`;
 
 const checkPhone = (data :string) :string|TemplateResult => 
   data.length ? phone(data) : '';
 
-const website = (company :string) :TemplateResult => {
-  const current = companies.filter((e :Company) :boolean => 
-    e.label === company)[0];
+const website = () :TemplateResult => {
   return html`
-  <div style="font-size: 11px; line-height: 15px;">
-    <a href=${current.url} target="_blank" style="color: #1155cc;">${current.url}</a>
+  <div style="font-size: 14px; line-height: 21px;">
+    <a href="https://precisionscience.com/email-signature/url" target="_blank" style="color: #63666a;text-decoration:none;">https://precisionscience.com</a>
   </div>`
 }
 
-const treviso = (company :string) :string|TemplateResult => {
-  return company !== companies[2].label ? 
-    html`
-    <div style="font-size: 11px; line-height: 15px;">
-      <a href="https://www.google.com/maps/place/Viale+della+Repubblica,+156,+31100+Treviso+TV" target="_blank" style="color: #1155cc;"><b style="font-weight: bold;">Treviso</b> – Viale della Repubblica 156/A</a>
-    </div>` : '';
-}
-
-const logo = (company :string) :TemplateResult => {
-  const filename :string = company ? company.toLowerCase() : 'bitrock';
+const logo = () :TemplateResult => {
   return html`
   <div>
-    <img src="https://github.com/bitrockteam/signature/blob/master/logos/${filename}.png?raw=true" height="32px" nosend="1">
+  <a href="https://precisionscience.com/email-signature/logo" target="_blank" style="color: #63666a;text-decoration:none;"><img src="https://precisionscience.com/app/themes/PrecisionScience/dist/img/logo-color.svg?v=tm" height="48px" nosend="1"></a>
   </div>`;
 }
 
 export const signature = (data :State) :TemplateResult => html`
 <div class="gmail_signature" data-smartmail="gmail_signature">
-<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; line-height: 24px; font-weight: normal; color: #1F1F1F;">
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px; line-height: 24px; font-weight: normal;">
   <div>
-    <b style="color: #3D3D3D; font-weight: bold;">${data.firstname}</b>&nbsp;<b style="color: #5C5C5C; font-weight: bold;">${data.lastname}</b>
+    <span style="font-size: 16px; line-height: 24px; color: #63666a;">${data.firstname}&nbsp;<span style="font-size: 16px; line-height: 24px; color: #63666a;">${data.lastname}</span>
   </div>
-  <div style="font-size: 12px; line-height: 15px;"><b style="color: #7A7A7A; font-weight: bold;">${data.role}</b></div>
+  <div style="font-size: 14px; line-height: 21px;">
+    <span style="color: #63666a; font-size: 14px; line-height: 21px;">${data.role}</span>
+  </div>
   <div style="line-height: 14px;"><br></div>
   <div>
-    <div style="font-size: 11px; line-height: 15px;;">
-      <a href="mailto:${data.email}" target="_blank" style="color: #1155CC;">${data.email}</a>
-    </div>
+  <div style="font-size: 14px; line-height: 21px;">
+    <a href="mailto:${data.email}" target="_blank" style="color: #63666a; font-size: 14px; line-height: 21px; text-decoration:none;">${data.email}</a>
+  </div>
+  <div style="font-size: 14px; line-height: 21px;">
     ${checkPhone(data.phone)}
   </div>
+  <div style="line-height: 28px;"><br></div>
+  ${logo()}
   <div style="line-height: 14px;"><br></div>
-  <div style="font-size: 14px; line-height: 20px;">
-    <b style="color: #3D3D3D; font-weight: bold;">${data.company.toUpperCase()}</b>&nbsp;<b style="color: #3D3D3D; font-weight: bold;">s.r.l.</b>
-  </div>
-  <div style="font-size: 11px; line-height: 15px;">
-    <a href="https://www.google.com/maps/place/Via+Pietro+Borsieri,+41,+20159+Milano+MI" target="_blank" style="color: #1155cc;"><b style="font-weight: bold;">Milano</b> – Via Borsieri ${data.company === 'Radicalbit' ? '41' : '41'}</a>
-  </div>
-  ${treviso(data.company)}
-  ${website(data.company)}
-  <div style="line-height: 14px;"><br></div>
-  ${logo(data.company)}
-  <div style="line-height: 14px;"><br></div>
-  ${confidential()}
+  ${website()}
 </div>
 </div>`;
