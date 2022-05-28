@@ -1,8 +1,5 @@
 # signature-builder
-
-[![Build Status](https://travis-ci.org/bitrockteam/signature.svg?branch=master)](https://travis-ci.org/bitrockteam/signature)
-
-Company email signature "builder".
+Create your company email signature
 
 
 ### Available NPM tasks
@@ -28,4 +25,4 @@ $ yarn deploy
 
 
 ### License
-Developed by Bitrock UI Engineering team, released under the [MIT license](LICENSE).
+Originally developed by Bitrock UI Engineering team, released under the [MIT license](LICENSE).
