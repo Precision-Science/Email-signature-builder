@@ -6,8 +6,7 @@ import { escapeHtml } from '../libs/escape';
 const root :Element = document.querySelector('#root');
 
 const data :State = {
-  firstname: '',
-  lastname: '',
+  name: '',
   role: '',
   email: '',
   phone: '',

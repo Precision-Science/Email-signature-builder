@@ -16,13 +16,8 @@ export const form = (data :State) :TemplateResult => html`
   <form class="col-12 col-md-6">
     <h4>Your signature details</h4>
     <div class="field-row">
-      <label for="firstname">First name</label>
-      <input type="text" name="firstname" 
-        @keyup=${e => update(e)}>
-    </div>
-    <div class="field-row">
-      <label for="lastname">Last name</label>
-      <input type="text" name="lastname" 
+      <label for="firstname">Name</label>
+      <input type="text" name="name" 
         @keyup=${e => update(e)}>
     </div>
     <div class="field-row">

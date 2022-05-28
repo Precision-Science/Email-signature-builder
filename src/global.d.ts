@@ -1,7 +1,6 @@
 
 interface State {
-  firstname: string,
-  lastname: string,
+  name: string,
   role: string,
   email: string,
   phone: string,
