@@ -11,15 +11,15 @@ const data :State = {
   role: '',
   email: '',
   phone: '',
-  company: 'Bitrock'
 }
 
 const app = () :TemplateResult => html`
   <main class="container">
     <h1>Email signature builder</h1>
-    <p>Just compile the form and then copy the data that your client requires:</p>
+    <p>Complete form and then copy the preview into your preferred email client:</p>
     <ul>
       <li><b>Gmail:</b> you copy the preview on the right and paste in the signature field.</li>
+      <li><b>Outlook:</b> you copy the preview on the right and paste in the signature field.</li>
       <li><b>Apple Mail:</b> similar to Gmail, but you have to uncheck <i>"Always match my default messsage font"</i>.</li>
     </ul>
     ${form(data)}
@@ -29,10 +29,8 @@ const app = () :TemplateResult => html`
 const _render = () :void => {
   render(app(), root);
   const code :Element = document.querySelector('pre code');
-  // const AmberCode: Element = document.querySelector('amber-code-snippet');
   const preview :HTMLDivElement = document.querySelector('#preview div');
   code.innerHTML = escapeHtml(preview.innerHTML);
-  // AmberCode.innerHTML = escapeHtml(preview.innerHTML);
 }
 
 document.body.addEventListener('update-data', (evt :CustomEvent) => {

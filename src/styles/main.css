@@ -1,0 +1,76 @@
+:root{
+  --columns: 12;
+  --gutter: 2rem;
+}
+html,body{
+  margin:0;
+  padding:0;
+}
+.container{
+  padding:3rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-size: 16px;
+  line-height: 24px;
+  font-weight: normal;
+}
+.container h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.container h4 {
+  margin-bottom: 2rem;
+}
+
+.container .row {
+  border-top:1px solid #c8c8c8;
+  margin: 1rem 0;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-gap: var(--gutter);
+}
+
+.gmail_signature {
+  padding: 2rem;
+  border: 1px solid #999999;
+  border-radius: 0;
+  overflow: scroll;
+  white-space: initial;
+  background: transparent;
+}
+
+.options span {
+  margin-right: 1rem;
+}
+
+.field-row{
+  display: flex;
+  padding:0 0 .5rem;
+}
+label{
+  font-size:14px;
+  min-width:8rem;
+}
+input{
+  font-size:14px;
+  width:100%;
+  border:1px solid #999999;
+  padding:.5rem 1rem;
+  width: 100%;
+}
+.col-12 {
+  grid-column: span 12;
+}
+@media (min-width: 768px){
+  .col-md-6 {
+    grid-column: span 6;
+  }
+}
+#code{
+  padding:3rem;
+  border:1px solid #999999;
+  background:#f1f1f1;
+}
+pre{
+  white-space:pre-line;
+}

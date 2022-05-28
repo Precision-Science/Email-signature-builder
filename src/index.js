@@ -1,6 +1,4 @@
-import '@amber-ds/visual/';
-import './styles/main.scss';
-
+import './styles/main.css';
 import './components/app';
 
 console.log('Project started...');
