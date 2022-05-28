@@ -28,8 +28,7 @@ const checkNameDivide = (data) :string|TemplateResult => {
 
 const checkEmail = (email :string) :string|TemplateResult => {
   if (email.length){
-    return html`
-    <div style="font-size: 14px; line-height: 21px;">
+    return html`<div style="font-size: 14px; line-height: 21px;">
       <a href="mailto:${email}" target="_blank" style="color: #63666a; font-size: 14px; line-height: 21px; text-decoration:none;">${email}</a>
     </div>`;
   }
@@ -37,8 +36,7 @@ const checkEmail = (email :string) :string|TemplateResult => {
 
 const checkPhone = (phone :string) :string|TemplateResult => {
   if (phone.length){
-    return html`
-    <div style="font-size: 14px; line-height: 21px;">
+    return html`<div style="font-size: 14px; line-height: 21px;">
       <a href="tel:${phone}" target="_blank" style="font-size: 14px; line-height: 21px; color: #63666a; text-decoration:none;">${phone}</a>
     </div>`;
   }
@@ -51,15 +49,13 @@ const checkLogoDivide = (data) :string|TemplateResult => {
   }
 }
 const logo = () :TemplateResult => {
-  return html`
-  <div>
+  return html`<div>
   <a href="https://precisionscience.com/email-signature/logo" target="_blank" style="color: #63666a;text-decoration:none;"><img src="https://precisionscience.com/app/themes/PrecisionScience/dist/img/logo-color.svg?v=tm" height="48px" nosend="1"></a>
   </div>`;
 }
 
 const website = () :TemplateResult => {
-  return html`
-  <div style="font-size: 14px; line-height: 21px;">
+  return html`<div style="font-size: 14px; line-height: 21px;">
     <a href="https://precisionscience.com/email-signature/url" target="_blank" style="color: #63666a;text-decoration:none;">https://precisionscience.com</a>
   </div>`;
 }
