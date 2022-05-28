@@ -28,4 +28,4 @@ $ yarn deploy
 
 
 ### License
-Developed by Bitrock UI Engineering team, released under the [MIT license](LICENSE).
+Originally developed by Bitrock UI Engineering team, released under the [MIT license](LICENSE).
