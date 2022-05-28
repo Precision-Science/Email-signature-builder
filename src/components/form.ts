@@ -42,7 +42,7 @@ export const form = (data :State) :TemplateResult => html`
   </div>
 </div>
   <div id="code">
-    <h4>If you email app prefers HTML (for copy & paste)</h4>
+    <h4>If your email app prefers HTML (for copy & paste)</h4>
     <pre>
       <code></code>
     </pre>
