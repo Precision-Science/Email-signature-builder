@@ -1,5 +1,5 @@
 import { html, TemplateResult } from 'lit-html';
-
+import { graphic } from '../libs/graphic';
   
 const checkName = (name :string) :string|TemplateResult => {
   if (name.length){
@@ -48,6 +48,15 @@ const checkLogoDivide = (data) :string|TemplateResult => {
     return html`<div style="line-height: 28px;"><br></div>`;
   }
 }
+const graphic_img = (graphic_id) :TemplateResult => {
+  const graphicObj = graphic[graphic_id];
+  console.log(graphicObj.url);
+
+  return html`<div>
+  <a href="${graphicObj.url}" target="_blank" style="color: #63666a;text-decoration:none;"><img src="${graphicObj.img}" height="${graphicObj.height}"></a>
+  </div>`;
+}
+
 const logo = () :TemplateResult => {
   return html`<div>
   <a href="https://precisionscience.com/email-signature/logo" target="_blank" style="color: #63666a;text-decoration:none;"><img src="https://precisionscience.com/app/themes/PrecisionScience/dist/img/logo-color.svg?v=tm" height="48px" nosend="1"></a>
@@ -69,7 +78,7 @@ export const signature = (data :State) :TemplateResult => html`
     ${checkEmail(data.email)}
     ${checkPhone(data.phone)}
     ${checkLogoDivide(data)}
-    ${logo()}
+    ${graphic_img(data.graphic)}
     <div style="line-height: 14px;"><br></div>
     ${website()}
   </div>

@@ -58,6 +58,17 @@ input{
   padding:.5rem 1rem;
   width: 100%;
 }
+.field-row .options{
+  display: block;
+  width:100%;
+}
+.options label{
+  margin-right:24px;
+}
+.options label *{
+  display: inline;
+  width: auto;
+}
 .col-12 {
   grid-column: span 12;
 }

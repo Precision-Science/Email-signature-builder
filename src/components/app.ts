@@ -10,6 +10,7 @@ const data :State = {
   role: '',
   email: '',
   phone: '',
+  graphic: 0,
 }
 
 const app = () :TemplateResult => html`
