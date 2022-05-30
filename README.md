@@ -13,11 +13,6 @@ Create a static build in the `./dist` folder
 $ yarn build
 ```
 
-<!-- Run the tests
-```bash
-$ yarn test
-``` -->
-
 Run the build action and deploy to GitHub pages 
 ```bash
 $ yarn deploy
